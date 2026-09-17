@@ -82,8 +82,31 @@ export class SweipeClient {
     return data as T;
   }
 
-  agent<T = any>(method: string, path: string, body?: unknown): Promise<T> {
-    return this.request<T>(method, `sweipe/v1/agent/${path.replace(/^\/+/, '')}`, body);
+  private namespace: string | null = null;
+
+  /**
+   * The plugin's REST namespace: `sweipe/v1` on Sweipe, `flatmobile/v1` on FlatMobile (the
+   * flavour build renames it). Read once from the REST index; SWEIPE_NAMESPACE overrides.
+   */
+  private async ns(): Promise<string> {
+    if (this.namespace) return this.namespace;
+    const forced = (process.env.SWEIPE_NAMESPACE || '').replace(/^\/+|\/+$/g, '');
+    if (forced) return (this.namespace = forced);
+    const index = await this.request<any>('GET', '', undefined, 30_000);
+    const names: string[] = Array.isArray(index?.namespaces) ? index.namespaces : [];
+    const found = names.find((n) => /^(sweipe|flatmobile)\/v1$/.test(n));
+    if (!found) {
+      throw new SweipeError(
+        'This site has no sweipe/v1 or flatmobile/v1 REST namespace. Is the Sweipe or FlatMobile Companion plugin 1.2.1+ active?',
+        404,
+      );
+    }
+    return (this.namespace = found);
+  }
+
+  async agent<T = any>(method: string, path: string, body?: unknown): Promise<T> {
+    const ns = await this.ns();
+    return this.request<T>(method, `${ns}/agent/${path.replace(/^\/+/, '')}`, body);
   }
 
   /** Drive an import to completion: call `run` until the server reports `done`. */

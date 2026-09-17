@@ -44,6 +44,9 @@ Application Passwords need HTTPS; on a local `http://` site add
 `add_filter( 'wp_is_application_passwords_available', '__return_true' );` to a
 must-use plugin.
 
+Works for FlatMobile sites too: the server reads the site's REST index and picks
+`sweipe/v1` or `flatmobile/v1` on its own (`SWEIPE_NAMESPACE` overrides).
+
 Optional: `SWEIPE_IMPORT_BUDGET` (seconds the server spends per import step, default
 25, max 55; lower it if your host kills long requests).
 
