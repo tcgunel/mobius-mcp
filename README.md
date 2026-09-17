@@ -1,4 +1,6 @@
-# sweipe-mcp
+# mobius-mcp
+
+The Mobius Studio MCP server for Sweipe and FlatMobile sites.
 
 An [MCP](https://modelcontextprotocol.io) server that lets an AI agent (Claude Code,
 Claude Desktop, Cursor, any MCP client) set up a WordPress site running the
@@ -21,7 +23,7 @@ for by the site's licence in monthly credits; no API key is needed anywhere.
 Claude Code:
 
 ```bash
-claude mcp add sweipe -e SWEIPE_SITE_URL=https://example.com -e SWEIPE_USER=admin -e SWEIPE_APP_PASSWORD="xxxx xxxx xxxx xxxx xxxx xxxx" -- npx -y sweipe-mcp
+claude mcp add sweipe -e SWEIPE_SITE_URL=https://example.com -e SWEIPE_USER=admin -e SWEIPE_APP_PASSWORD="xxxx xxxx xxxx xxxx xxxx xxxx" -- npx -y mobius-mcp
 ```
 
 Claude Desktop / Cursor (`mcpServers` entry):
@@ -30,7 +32,7 @@ Claude Desktop / Cursor (`mcpServers` entry):
 {
   "sweipe": {
     "command": "npx",
-    "args": ["-y", "sweipe-mcp"],
+    "args": ["-y", "mobius-mcp"],
     "env": {
       "SWEIPE_SITE_URL": "https://example.com",
       "SWEIPE_USER": "admin",

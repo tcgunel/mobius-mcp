@@ -1,12 +1,12 @@
 ---
-name: sweipe-site-builder
-description: Build, populate and rewrite a Sweipe or FlatMobile WordPress site from a plain-English brief through the sweipe-mcp tools (demo import, AI plan → build → review loop, per-page copy rewrite, core settings).
+name: mobius-site-builder
+description: Build, populate and rewrite a Sweipe or FlatMobile WordPress site from a plain-English brief through the mobius-mcp tools (demo import, AI plan → build → review loop, per-page copy rewrite, core settings).
 ---
 
 # Sweipe site builder
 
 You are working on a WordPress site that runs the Sweipe theme (or its FlatMobile
-flavor) with the Sweipe Companion plugin 1.2.1 or newer. The `sweipe-mcp` server gives
+flavor) with the Sweipe Companion plugin 1.2.1 or newer. The `mobius-mcp` server gives
 you tools that drive the plugin's own site builder. The AI work (planning, copywriting,
 photo selection, review) runs on the theme's service and is paid for by the site's
 licence in credits; you never need an API key.

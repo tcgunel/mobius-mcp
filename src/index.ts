@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * sweipe-mcp: an MCP server that lets an AI agent drive a Sweipe or FlatMobile
+ * mobius-mcp: an MCP server that lets an AI agent drive a Sweipe or FlatMobile
  * WordPress site through the theme plugin's `sweipe/v1/agent` REST surface.
  *
  * Environment:
@@ -15,7 +15,7 @@ import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import { z } from 'zod';
 import { SweipeClient, SweipeError, configFromEnv } from './client.js';
 
-const server = new McpServer({ name: 'sweipe-mcp', version: '0.1.0' });
+const server = new McpServer({ name: 'mobius-mcp', version: '0.1.0' });
 
 let client: SweipeClient | null = null;
 function api(): SweipeClient {
@@ -371,13 +371,13 @@ async function main() {
     configFromEnv();
   } catch (e: any) {
     // Keep serving so the client can list tools; every call will return this message.
-    process.stderr.write(`sweipe-mcp: ${e.message}\n`);
+    process.stderr.write(`mobius-mcp: ${e.message}\n`);
   }
   const transport = new StdioServerTransport();
   await server.connect(transport);
 }
 
 main().catch((e) => {
-  process.stderr.write(`sweipe-mcp: ${e?.message || e}\n`);
+  process.stderr.write(`mobius-mcp: ${e?.message || e}\n`);
   process.exit(1);
 });
