@@ -1,0 +1,26 @@
+{
+  "name": "sweipe-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Sweipe and FlatMobile WordPress sites: import demos, plan and build a site from a brief, rewrite copy, review the result.",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "sweipe-mcp": "dist/index.js" },
+  "files": ["dist", "SKILL.md", "README.md"],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch"
+  },
+  "engines": { "node": ">=18" },
+  "keywords": ["mcp", "wordpress", "sweipe", "flatmobile", "elementor", "ai", "site-builder"],
+  "repository": { "type": "git", "url": "https://github.com/mobiusstudio/sweipe-mcp" },
+  "homepage": "https://mobius.studio/sweipe/",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
