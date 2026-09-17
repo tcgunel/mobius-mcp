@@ -32,7 +32,7 @@ Claude Desktop / Cursor (`mcpServers` entry):
 {
   "sweipe": {
     "command": "npx",
-    "args": ["-y", "mobius-mcp"],
+    "args": ["-y", "mobius-studio-mcp"],
     "env": {
       "SWEIPE_SITE_URL": "https://example.com",
       "SWEIPE_USER": "admin",
