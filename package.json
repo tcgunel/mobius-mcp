@@ -1,10 +1,10 @@
 {
-  "name": "mobius-mcp",
+  "name": "mobius-studio-mcp",
   "version": "0.1.0",
   "description": "Mobius Studio MCP server for Sweipe and FlatMobile WordPress sites: import demos, plan and build a site from a brief, rewrite copy, review the result.",
   "license": "MIT",
   "type": "module",
-  "bin": { "mobius-mcp": "dist/index.js" },
+  "bin": { "mobius-studio-mcp": "dist/index.js" },
   "files": ["dist", "SKILL.md", "README.md"],
   "scripts": {
     "build": "tsc",
