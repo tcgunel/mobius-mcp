@@ -13,7 +13,7 @@
   },
   "engines": { "node": ">=18" },
   "keywords": ["mcp", "wordpress", "sweipe", "flatmobile", "elementor", "ai", "site-builder"],
-  "repository": { "type": "git", "url": "https://github.com/mobiusstudio/sweipe-mcp" },
+  "repository": { "type": "git", "url": "https://github.com/tcgunel/sweipe-mcp" },
   "homepage": "https://mobius.studio/sweipe/",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",
